@@ -4,7 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
     entry: {
-      app:'./src/index.js'
+      app:'./src/index.js',
+      snabbdom:'./src/snabbdom.js'
     },
     devtool: 'inline-source-map',
     devServer: {

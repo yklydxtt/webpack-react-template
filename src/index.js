@@ -12,6 +12,8 @@ function component(){
     return element;
 }
 let element = component();
+const app=document.createElement('div');
+element.appendChild(app);
 document.body.appendChild(element);
 if(module.hot){
     module.hot.accept('./print.js',function(){
@@ -21,3 +23,4 @@ if(module.hot){
         document.body.appendChild(element);
     })
 }
+
