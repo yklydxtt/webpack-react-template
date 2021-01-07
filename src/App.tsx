@@ -1,9 +1,25 @@
 import React from 'react';
-import styles from './style.css';
-// import './style.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import { Routes } from '@/config/route';
 
-export default () => {
-  return (
-    <div className={styles.container}>App</div>
-  )
-}
+export default () => (
+  <div>
+    <Router>
+      <Switch>
+        {Routes.map((item) => (
+          <Route
+            path={item.path}
+            exact={item.exact}
+            key={item.path}
+          >
+            {item.component}
+          </Route>
+        ))}
+      </Switch>
+    </Router>
+  </div>
+);

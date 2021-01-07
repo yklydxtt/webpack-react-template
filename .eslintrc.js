@@ -1,19 +1,24 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "node": true,
+        "es6": true
     },
     "extends": [
+        "eslint:recommended",
         "plugin:react/recommended",
         "airbnb",
-        "airbnb/hooks" 
+        // "prettier/@typescript-eslint",
+        // "plugin:prettier/recommended"
+        // "eslint-config-airbnb-base"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
+        "project": "tsconfig.json",
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 12,
+        "ecmaVersion": 2020,
         "sourceType": "module"
     },
     "plugins": [
@@ -21,12 +26,16 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/no-var-requires": 0,
+        "react/jsx-filename-extension": "off",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "no-use-before-define": "off",
+        "import/extensions": "off"
     },
-    "setting":{
-        'import/resolver':{
-            node:{
-                "extension":['.ts','.tsx','.js','jsx']
-            }
+    "settings": {
+        "react": {
+            "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
         }
-    }
+    },
 };

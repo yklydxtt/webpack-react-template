@@ -11,6 +11,9 @@
 - 生产环境代码压缩
 - alias对文件路径优化,@对应src文件夹
 
+### eslint
+- 使用ts+airbn规范
+
 ## 用法
 
 ### 安装
@@ -25,7 +28,7 @@ npm i
 npm run dev
 ```
 
-### 打包
+### 构建
 
 ```js
 npm run build
