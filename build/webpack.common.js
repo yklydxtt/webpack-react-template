@@ -41,7 +41,7 @@ module.exports = {
             options: {
               modules: {
                 exportGlobals: false,
-                localIdentName: "purify_[local]__[hash:base64]",
+                localIdentName: "[local]__[hash:base64]",
               },
             },
           },
@@ -85,6 +85,6 @@ module.exports = {
   output: {
     filename: "[name].bundle.[hash:8].js",
     path: path.resolve(__dirname, "../dist"),
-    publicPath: "/",
+    publicPath: "http://localhost:3000",
   },
 };

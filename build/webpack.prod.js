@@ -1,13 +1,17 @@
-const path = require("path");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 const PurifyCSSPlugin = require("purgecss-webpack-plugin");
 const glob = require("glob-all");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
   devtool: "cheap-module-source-map",
   plugins: [
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+    }),
     //  css TreeShaking
     // new PurifyCSSPlugin({
     //   purifyOptions: {
